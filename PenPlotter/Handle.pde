@@ -56,6 +56,7 @@
                 {
                     float dx = (unScaleX(mouseX) -x)/trackSpeed;
                     x+=dx;
+                    println(dx+":"+x);
                 }
                 if (followsY)
                 {
@@ -63,6 +64,7 @@
                     y += dy;
                 }
                 handleMoved(id, (int)x, (int)y);
+                
             }
         }
 

@@ -529,6 +529,7 @@
         if (jog) {
             com.sendRelative();
             jogX = x;
+            //jogX = -x;
             jogY = y;
         } else
         {

@@ -308,11 +308,14 @@ import java.awt.BorderLayout;
 
     public void mouseDragged()
     {
+      
         if (mouseButton == CENTER) {
+         
             originX = oldOriginX + mouseX -startX;
             originY = oldOriginY + mouseY -startY;
         } else if (mouseButton == RIGHT)
         {
+          
             offX = oldOffX + (int)((mouseX -startX)/zoomScale);
             offY = oldOffY + (int)((mouseY -startY)/zoomScale);
         }
