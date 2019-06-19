@@ -1,0 +1,210 @@
+#__author__ = "Luis Pacheco"
+#__copyright__ = "Copyright 2019, Luis Pacheco"
+
+#__license__ = "GPL"
+#__version__ = "0.0.1"
+#__maintainer__ = "Luis Pacheco"
+#__email__ = "luigi@luigipacheco.com"
+#__status__ = "Alpha"
+<mainLayout>:
+    cols : 1
+    BoxLayout:
+        cols : 2
+        BoxLayout: #functions
+            orientation : "vertical"
+            size_hint_x : None
+            width:app.button_size
+            Button:
+                id: connect
+                text: "Connect"
+                size_hint_x : None
+                width:app.button_size
+                on_press: root.connect()
+
+            Button:
+                id: setHome
+                text: "Set Home"
+                size_hint_x : None
+                width:app.button_size
+                on_press: root.setHome(False)
+
+            Button:
+                id: motorsOff
+                text: "Turn Off motors"
+                size_hint_x : None
+                width: app.button_size
+                on_press: root.sendMotorsOff()
+            Button:
+                id: camera
+                text: "CameraOn"
+                size_hint_x : None
+                width: app.button_size
+                on_press: root.camera()
+            Button:
+                id: goto
+                text: "goTo"
+                size_hint_x : None
+                width: app.button_size
+                on_press: root.goTo()
+
+            Button:
+                id: stop
+                text: "Emergency STOP"
+                size_hint_x : None
+                background_color: (1,0,0,1)
+                width:app.button_size
+                on_press: root.emergencyStop()
+
+        BoxLayout:
+            orientation : "vertical"
+            col_default_width : 100
+            BoxLayout:
+                id: opencv
+ #           Camera:
+ #               id: camera
+ #               index : 0
+ #               resolution: (640, 480)
+ #               play: True
+
+            BoxLayout:
+                GridLayout:
+                    row_default_height:40
+                    row_force_default : True
+                    cols : 2
+                    orientation : "vertical"
+                    TextInput:
+                        text:
+                        id: port
+                    Button:
+                        text: "Set port"
+                        on_press: root.btn_clk()
+                    TextInput:
+                        id: baudrate
+                        text:
+                    Button:
+                        text: "Set Baudrate"
+                        on_press: root.btn_clk()
+                    TextInput:
+                        id: machineWidth
+                        text:
+                    Button:
+                        text: "Set Width"
+                        on_press: root.btn_clk()
+                    TextInput:
+                        id: setStep
+                        text:
+                    Button:
+                        text: "Steps per Rev."
+                    TextInput:
+                        id: mmPerMin
+                        text:
+                    Button:
+                        text: "Set mm per Rev."
+                        on_press: root.btn_clk()
+                    TextInput:
+                        id:speed
+                        text:
+                    Button:
+                        text: "Set Speed"
+                        on_press: root.btn_clk()
+                    Label:
+                    Button:
+                        id: save
+                        text: "Save parameters"
+                        on_press: root.save()
+                BoxLayout:
+                    orientation: "vertical"
+                    GridLayout:
+                        padding: 10
+                        cols: 3
+                        Label:
+                        Button:
+                            id: up
+                            text: "UP"
+                            on_press: root.moveUP()
+                        Label:
+                        Button:
+                            id: left
+                            text: "LEFT"
+                            on_press: root.moveLEFT()
+                        TextInput:
+                            id: step
+                            text: "1"
+                        Button:
+                            id: right
+                            text: "RIGHT"
+                            on_press: root.moveRIGHT()
+                        Label:
+                        Button:
+                            id: down
+                            text: "DOWN"
+                            on_press: root.moveDOWN()
+                        Label:
+                BoxLayout:
+                    orientation: "vertical"
+                    BoxLayout:
+                        orientation : "horizontal"
+                        size_hint_y : None
+                        height:30
+                        Label:
+                            text: "X"
+                        TextInput:
+                            id: quadX
+                            text: "1"
+                        Label:
+                            text: "Y"
+                        TextInput:
+                            id: quadY
+                            text: "1"
+                        Button:
+                            id: right
+                            text: "quad"
+                            on_press: root.drawQuad()
+                    BoxLayout:
+                        orientation : "horizontal"
+                        size_hint_y : None
+                        height:30
+                        Label:
+                            text: "X"
+                        TextInput:
+                            id: quadX
+                            text: "1"
+                        Label:
+                            text: "Y"
+                        TextInput:
+                            id: quadY
+                            text: "1"
+                        Button:
+                            id: right
+                            text: "quad"
+                            on_press: root.drawQuad()
+                    BoxLayout:
+                        orientation : "horizontal"
+                        size_hint_y : None
+                        height:30
+                        Label:
+                            text: "X"
+                        TextInput:
+                            id: moveX
+                            text: "1"
+                        Label:
+                            text: "Y"
+                        TextInput:
+                            id: moveY
+                            text: "1"
+                        Button:
+                            id: right
+                            text: "moveXY"
+                            on_press: root.moveXY()
+                    BoxLayout:
+                        orientation : "horizontal"
+                        size_hint_y : None
+                        height:30
+                        Button:
+                            id: absolute
+                            text: "Absolute"
+                            on_press: root.absolute()
+                        Button:
+                            id: relative
+                            text: "Relative"
+                            on_press: root.relative()

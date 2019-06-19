@@ -642,8 +642,8 @@ on this endstop.
 #define DISABLE_E false
 
 // Inverting axis direction
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR true
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 
 //// ENDSTOP SETTINGS:
@@ -1085,10 +1085,10 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #define FEATURE_SERVO true
 // Servo pins on a RAMPS board are 11,6,5,4
-#define SERVO0_PIN 11
+#define SERVO0_PIN 11  //11
 #define SERVO1_PIN 6
 #define SERVO2_PIN 5
-#define SERVO3_PIN 4
+#define SERVO3_PIN 3
 
 /* A watchdog resets the printer, if a signal is not send within predifined time limits. That way we can be sure that the board
 is always running and is not hung up for some unknown reason. */
