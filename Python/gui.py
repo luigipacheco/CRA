@@ -8,7 +8,7 @@ __email__ = "luigi@luigipacheco.com"
 __status__ = "Alpha"
 
 import os
-from serial import Serial
+import serial
 import time
 import cv2
 import imutils
@@ -222,7 +222,7 @@ class mainLayout(GridLayout):
         mmpr = self.ids['mmPerMin'].text
         speed = self.ids['speed'].text
         toolWidth = "3"
-        s = Serial('/dev/'+port, int(baudrate))
+        s = serial.Serial('/dev/'+port, int(baudrate))
         time.sleep(1)
         print(f"cake has been pressed")
         self.sendSpecs(machineWidth,toolWidth,steps,float(mmpr)*3.14159)
@@ -326,7 +326,7 @@ class guiApp(App):
 if __name__ == "__main__":
     if testing:
         try:
-            s = Serial('/dev/ttyACM0', 115200)
+            s = serial.Serial('/dev/ttyACM0', 115200)
             #s = Serial(port=port, baudrate=self.baudrate, timeout=self.timeout)
         except:
             print("Failed to connect")
