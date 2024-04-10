@@ -1202,11 +1202,11 @@ Select the language to use.
 7 = French
 8 = Czech
 */
-#define UI_LANGUAGE 1
+#define UI_LANGUAGE 0
 
 // This is line 2 of the status display at startup. Change to your like.
-#define UI_PRINTER_NAME "Ordbot"
-#define UI_PRINTER_COMPANY "RepRapDiscount"
+#define UI_PRINTER_NAME "XY Plotter"
+#define UI_PRINTER_COMPANY "NeoBrutal"
 
 
 /** Animate switches between menus etc. */
